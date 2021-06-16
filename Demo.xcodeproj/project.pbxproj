@@ -17,6 +17,7 @@
 		52EB12A42679D6BE00DEE57C /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EB129D2679D6BE00DEE57C /* Core.framework */; };
 		52EB12A52679D6BE00DEE57C /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52EB129D2679D6BE00DEE57C /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52EB12AF2679D81F00DEE57C /* IDETemplateMacros.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EB12AE2679D81F00DEE57C /* IDETemplateMacros.plist */; };
+		52EB12C42679DB1900DEE57C /* AppEnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB12C32679DB1900DEE57C /* AppEnvironmentProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		52EB129F2679D6BE00DEE57C /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		52EB12A02679D6BE00DEE57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52EB12AE2679D81F00DEE57C /* IDETemplateMacros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = Demo.xcodeproj/xcuserdata/john.xcuserdatad/IDETemplateMacros.plist; sourceTree = "<group>"; };
+		52EB12C32679DB1900DEE57C /* AppEnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,10 +175,19 @@
 		52EB129E2679D6BE00DEE57C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				52EB12C22679DB0C00DEE57C /* ApplicationLayer */,
 				52EB129F2679D6BE00DEE57C /* Core.h */,
 				52EB12A02679D6BE00DEE57C /* Info.plist */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		52EB12C22679DB0C00DEE57C /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				52EB12C32679DB1900DEE57C /* AppEnvironmentProvider.swift */,
+			);
+			path = ApplicationLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 					};
 					52EB129C2679D6BE00DEE57C = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -377,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EB12C42679DB1900DEE57C /* AppEnvironmentProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +533,7 @@
 		52EB12902679D65E00DEE57C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -542,6 +556,7 @@
 		52EB12912679D65E00DEE57C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -648,6 +663,7 @@
 		52EB12A72679D6BE00DEE57C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -665,6 +681,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.onsissond.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -675,6 +692,7 @@
 		52EB12A82679D6BE00DEE57C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
