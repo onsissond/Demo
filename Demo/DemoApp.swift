@@ -13,7 +13,11 @@ struct DemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: .init(
+                initialState: AppState(),
+                reducer: appReducer,
+                environment: AppEnvironment.live
+            ))
         }
     }
 }

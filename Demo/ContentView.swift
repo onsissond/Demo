@@ -6,16 +6,29 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
+    private let _store: Store<AppState, AppEvent>
+
+    init(store: Store<AppState, AppEvent>) {
+        _store = store
+    }
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        WithViewStore(_store) { viewStore in
+            Text(viewStore.title)
+                .padding()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(store: .init(
+            initialState: .mock,
+            reducer: appReducer,
+            environment: .mock
+        ))
     }
 }

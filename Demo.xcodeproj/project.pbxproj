@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		52EB12AF2679D81F00DEE57C /* IDETemplateMacros.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EB12AE2679D81F00DEE57C /* IDETemplateMacros.plist */; };
 		52EB12C42679DB1900DEE57C /* AppEnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB12C32679DB1900DEE57C /* AppEnvironmentProvider.swift */; };
 		52EB12C62679E10100DEE57C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB12C52679E10100DEE57C /* AppDelegate.swift */; };
+		52EB12CB267A0C7D00DEE57C /* AppSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB12CA267A0C7D00DEE57C /* AppSystem.swift */; };
+		52EB12CE267A0CB800DEE57C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 52EB12CD267A0CB800DEE57C /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,7 @@
 		52EB12AE2679D81F00DEE57C /* IDETemplateMacros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = Demo.xcodeproj/xcuserdata/john.xcuserdatad/IDETemplateMacros.plist; sourceTree = "<group>"; };
 		52EB12C32679DB1900DEE57C /* AppEnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentProvider.swift; sourceTree = "<group>"; };
 		52EB12C52679E10100DEE57C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52EB12CA267A0C7D00DEE57C /* AppSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EB12CE267A0CB800DEE57C /* ComposableArchitecture in Frameworks */,
 				52EB12A42679D6BE00DEE57C /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +143,7 @@
 		52EB126C2679D65C00DEE57C /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				52EB12C8267A0C4E00DEE57C /* Modules */,
 				52EB12C52679E10100DEE57C /* AppDelegate.swift */,
 				52EB126D2679D65C00DEE57C /* DemoApp.swift */,
 				52EB126F2679D65C00DEE57C /* ContentView.swift */,
@@ -193,6 +198,22 @@
 			path = ApplicationLayer;
 			sourceTree = "<group>";
 		};
+		52EB12C8267A0C4E00DEE57C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				52EB12C9267A0C7000DEE57C /* App */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		52EB12C9267A0C7000DEE57C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				52EB12CA267A0C7D00DEE57C /* AppSystem.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -222,6 +243,9 @@
 				52EB12A32679D6BE00DEE57C /* PBXTargetDependency */,
 			);
 			name = Demo;
+			packageProductDependencies = (
+				52EB12CD267A0CB800DEE57C /* ComposableArchitecture */,
+			);
 			productName = Demo;
 			productReference = 52EB126A2679D65C00DEE57C /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -316,6 +340,9 @@
 				Base,
 			);
 			mainGroup = 52EB12612679D65C00DEE57C;
+			packageReferences = (
+				52EB12CC267A0CB800DEE57C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 52EB126B2679D65C00DEE57C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EB12CB267A0C7D00DEE57C /* AppSystem.swift in Sources */,
 				52EB12C62679E10100DEE57C /* AppDelegate.swift in Sources */,
 				52EB12702679D65C00DEE57C /* ContentView.swift in Sources */,
 				52EB126E2679D65C00DEE57C /* DemoApp.swift in Sources */,
@@ -545,7 +573,7 @@
 				DEVELOPMENT_TEAM = 3V868FP58Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +596,7 @@
 				DEVELOPMENT_TEAM = 3V868FP58Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -677,6 +705,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,6 +735,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -770,6 +800,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52EB12CC267A0CB800DEE57C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.19.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52EB12CD267A0CB800DEE57C /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52EB12CC267A0CB800DEE57C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52EB12622679D65C00DEE57C /* Project object */;
 }
